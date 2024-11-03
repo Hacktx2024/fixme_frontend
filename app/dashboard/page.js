@@ -8,7 +8,7 @@ const page = () => {
     <>
     <Navbar/>
     
-    <main className='grid grid-cols-6 grid-rows-5 w-full h-[70vh] pr-22 '>
+    <main className='grid grid-cols-6 grid-rows-5 w-full h-[70vh] gap-14'>
       
       <div className='col-span-2 '>
         <Image src={'/Illustration.svg'} width={400 } alt='d' height={400} className='object-contain' />
@@ -25,6 +25,8 @@ const page = () => {
         <Link href={'/reminder'}><Image alt="photo not loaded" src={'/third.svg'} width={250} height={250}/></Link>
         <div className='text-md hover:font-bold hover:underline cursor-pointer'>Set Reminder → </div>
       </div>
+
+      <div className='absolute bottom-12 right-12 z-10'>   </div>
     </main>
     </>
   )
