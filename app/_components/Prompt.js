@@ -5,8 +5,7 @@ import Image from 'next/image';
 
 export default function StyledPrompt({ onSubmit }) {
   const [inputValue, setInputValue] = useState('');
-  const fileInputRef = useRef(null); // Reference for the hidden file input
-
+  const fileInputRef = useRef(null); 
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
   };
@@ -20,19 +19,19 @@ export default function StyledPrompt({ onSubmit }) {
   };
 
   const handlePaperclipClick = () => {
-    fileInputRef.current.click(); // Programmatically open the file input
+    fileInputRef.current.click(); 
   };
 
   const handleSubmit = () => {
     if (inputValue.trim()) {
-      onSubmit(inputValue); // Call the onSubmit prop function with the message
-      setInputValue(''); // Clear the input field
+      onSubmit(inputValue); 
+      setInputValue(''); 
     }
   };
 
   const handleKeyDown = (e) => {
     if (e.key === 'Enter') {
-      handleSubmit(); // Submit the chat message when Enter is pressed
+      handleSubmit(); 
     }
   };
 
@@ -57,7 +56,7 @@ export default function StyledPrompt({ onSubmit }) {
         type="text"
         value={inputValue}
         onChange={handleInputChange}
-        onKeyDown={handleKeyDown} // Handle Enter key
+        onKeyDown={handleKeyDown} 
         placeholder="How are you feeling today?"
         style={styles.input}
       />
@@ -93,11 +92,11 @@ const styles = {
     backgroundColor: 'transparent',
     border: 'none',
     cursor: 'pointer',
-    padding: '0', // Remove default padding
-    display: 'flex', // Center icon in button
+    padding: '0', 
+    display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    width: '40px', // Responsive button width
-    height: '40px', // Responsive button height
+    width: '40px', 
+    height: '40px', 
   },
 };
