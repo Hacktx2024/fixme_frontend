@@ -5,8 +5,8 @@ const page = () => {
   return (
     <main>
 
-<Prompt/>
 <ChatThread/>
+<Prompt/>ß
     </main>
   )
 }

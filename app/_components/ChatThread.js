@@ -17,7 +17,7 @@ getData()
     <section className='h-auto mb-[100px] shadow-sm flex flex-col gap-4 justify-end overflow-y-scroll'>
         {
             convoHistory?.map(({speaker,message}, i)=> {
-                if (speaker=="Chatbot") return <div key={i}> <BotResponse message={message}/></div>
+                if (speaker=="Chatbot") return <div key={i}> <BotResponse message={message} /></div>
                 else return <div key={i}> <HumanResponse message={message}/></div>
             }
         )
