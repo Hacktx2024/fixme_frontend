@@ -14,7 +14,20 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="h-auto flex bg-white">
+    <>
+    
+{/* \nav */}b
+
+<div className='flex flex-row justify-between py-8 items-center ' >
+    <Image src={'/logo.svg'} width={64} height={64} alt='logo' className=''/>   
+    
+    
+     </div>
+
+
+
+     <div className="h-auto flex bg-white">
+      
       {/* Left section for the SVG image with background color */}
       <div className="flex-1 flex items-center justify-start">
         <Image
@@ -133,8 +146,14 @@ export default function LoginPage() {
               Login
             </button>
           </form>
+          <div className="text-center mt-6 text-gray-600"> Don’t have an account?{" "} <Link href="/sign-up" className="text-green-700 hover:underline"> Sign up now </Link> </div>
         </div>
       </div>
     </div>
+
+
+
+  
+    </>
   );
 }
