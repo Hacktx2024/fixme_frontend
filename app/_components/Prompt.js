@@ -1,103 +1,77 @@
 "use client";
 
-import { useState, useRef } from 'react';
-import Image from 'next/image';
+import Link from 'next/link';
+import { useState } from 'react';
 
-export default function StyledPrompt({ onSubmit }) {
-  const [inputValue, setInputValue] = useState('');
-  const fileInputRef = useRef(null); // Reference for the hidden file input
+export default function LoginPage() {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
 
-  const handleInputChange = (e) => {
-    setInputValue(e.target.value);
-  };
-
-  const handleFileChange = (e) => {
-    const files = e.target.files;
-    if (files && files.length > 0) {
-      console.log("Selected files:", files);
-      alert(`You selected ${files.length} file(s): ${Array.from(files).map(f => f.name).join(', ')}`);
-    }
-  };
-
-  const handlePaperclipClick = () => {
-    fileInputRef.current.click(); // Programmatically open the file input
-  };
-
-  const handleSubmit = () => {
-    if (inputValue.trim()) {
-      onSubmit(inputValue); // Call the onSubmit prop function with the message
-      setInputValue(''); // Clear the input field
-    }
-  };
-
-  const handleKeyDown = (e) => {
-    if (e.key === 'Enter') {
-      handleSubmit(); // Submit the chat message when Enter is pressed
-    }
+  const handleLogin = (e) => {
+    e.preventDefault();
+    console.log('Login attempt:', { username, password });
   };
 
   return (
-    <div style={styles.container}>
-      <Image
-        src={'/paperclip.svg'}
-        width={50}
-        height={50}
-        alt={"paperclip icon"}
-        onClick={handlePaperclipClick}
-        style={{ cursor: 'pointer' }}
-      />
-      <input
-        type="file"
-        ref={fileInputRef}
-        style={{ display: 'none' }}
-        onChange={handleFileChange}
-        accept="image/*,application/pdf"
-      />
-      <input
-        type="text"
-        value={inputValue}
-        onChange={handleInputChange}
-        onKeyDown={handleKeyDown} // Handle Enter key
-        placeholder="How are you feeling today?"
-        style={styles.input}
-      />
-      <button onClick={handleSubmit} style={styles.sendButton}>
-        <Image src={'/send.svg'} width={40} height={40} alt={"send icon"} />
-      </button>
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100">
+      <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+        
+        {/* SVG Image */}
+        <div className="flex justify-center mb-6">
+          <img src="/loginPage.svg" alt="Login Illustration" className="w-40 h-40" />
+        </div>
+        
+        <h2 className="text-2xl font-bold text-center mb-6">Welcome back!</h2>
+        
+        <form onSubmit={handleLogin} className="space-y-6">
+          <div>
+            <label htmlFor="username" className="block text-sm font-medium text-gray-700">
+              Username
+            </label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              required
+              className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm"
+            />
+          </div>
+          <div>
+            <label htmlFor="password" className="block text-sm font-medium text-gray-700">
+              Password
+            </label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+              className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm"
+            />
+          </div>
+          <div className="flex justify-end">
+            <Link href="/forgot-password" className="text-sm text-blue-500 hover:underline">
+              Forgot Password?
+            </Link>
+          </div>
+          <button
+            type="submit"
+            className="w-full py-2 px-4 bg-blue-600 text-white rounded-md hover:bg-blue-700"
+          >
+            Login
+          </button>
+        </form>
+        
+        <div className="text-center mt-6 text-gray-600">
+          Don’t have an account?{' '}
+          <Link href="/sign-up" className="text-blue-500 hover:underline">
+            Sign up now
+          </Link>
+        </div>
+      </div>
     </div>
-  );
+  ); 
 }
-
-const styles = {
-  container: {
-    display: 'flex',
-    alignItems: 'center',
-    border: '1px solid #4B8A3F',
-    borderRadius: '25px',
-    padding: '8px 12px',
-    width: 'calc(100% - 40px)',
-    position: 'fixed',
-    left: '20px',
-    right: '20px',
-    bottom: '20px',
-    boxShadow: '0 -2px 10px rgba(0, 0, 0, 0.5)',
-    backgroundColor: 'white',
-  },
-  input: {
-    flex: 1,
-    border: 'none',
-    outline: 'none',
-    fontSize: '16px',
-  },
-  sendButton: {
-    backgroundColor: 'transparent',
-    border: 'none',
-    cursor: 'pointer',
-    padding: '0', 
-    display: 'flex', 
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: '40px',
-    height: '40px', 
-  },
-};

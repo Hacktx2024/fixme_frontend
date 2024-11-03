@@ -7,9 +7,6 @@ import FrontPage from "./_components/frontPage";
 export default function Home() {
   return (
     <main>
- 
-  
-      
       <FrontPage/>
     </main>
   );
