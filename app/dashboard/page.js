@@ -26,7 +26,23 @@ const page = () => {
         <div className='text-md hover:font-bold hover:underline cursor-pointer'>Set Reminder → </div>
       </div>
 
-      <div className='absolute bottom-12 right-12 z-10'>   </div>
+    <Link href={'/ask'}>
+    
+    <div  className='fixed bottom-12 right-12 z-10'>
+      <div className='flex flex-row-reverse gap-5 justify-center items-center'>
+
+ <Image src='/botlogo.svg' width={50} height={50} alt="bot"/> 
+ <div className='bg-[#22602F] relative px-6 rounded-lg py-2 text-white' >
+  <div className='absolute w-6 h-6 bg-inherit -right-2 -rotate-45 '></div>
+  
+  Hi, How can I help you today?</div>
+      </div>
+ 
+ 
+  </div>
+  
+  
+  </Link> 
     </main>
     </>
   )
