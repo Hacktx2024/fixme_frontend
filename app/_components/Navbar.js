@@ -7,7 +7,7 @@ const Navbar = () => {
     <nav>
 
 
-    <div className='flex flex-row justify-between py-8 items-center px-12 bg-red-200 ' >
+    <div className='flex flex-row justify-between py-8 items-center px-12 ' >
 
         <Image src={'/logo.svg'} width={64} height={64} alt='logo' className=''/>   
         
