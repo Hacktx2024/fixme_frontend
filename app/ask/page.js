@@ -4,7 +4,6 @@ import ChatThread from '../_components/ChatThread'
 const page = () => {
   return (
     <main>
-
 <ChatThread/>
 <Prompt/>
     </main>
