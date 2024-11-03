@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Navbar from "./_components/Navbar";
 import ChatThread from "./_components/ChatThread";
+import Prompt from "./_components/Prompt";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
 
 
       <Navbar/>
+      <Prompt/>
       <ChatThread/>
     </main>
   );
