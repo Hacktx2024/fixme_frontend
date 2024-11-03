@@ -14,16 +14,16 @@ useEffect(()=>{
 getData()
 },[])
   return (
-    <section className='bg-slate-300 h-[70vh] flex flex-col justify-end'>
+    <section className='h-auto mb-[100px] shadow-sm flex flex-col gap-4 justify-end overflow-y-scroll'>
         {
-            convoHistory?.map(({speaker})=> {
-                if (speaker=="Chatbot") return <BotResponse message={["dsfs"]}/>
-                else return <HumanResponse/>
+            convoHistory?.map(({speaker,message}, i)=> {
+                if (speaker=="Chatbot") return <div key={i}> <BotResponse message={message}/></div>
+                else return <div key={i}> <HumanResponse message={message}/></div>
             }
         )
         }
 
-        <BotResponse/>
+        {/* <BotResponse message={["Hello, I am a bot", "Welcome to Mediswift"]}/> */}
 
    
     </section>
