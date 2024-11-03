@@ -1,11 +1,15 @@
-import React from "react";
-import Report from "../_components/Report.js"
-
+import React from 'react'
+import Navbar from '../_components/Navbar'
+import ReportPatient from '../_components/ReportPatient'
 const page = () => {
   return (
-    <div>
-      <Report/>
-    </div>
+    
+    
+    <>
+
+    
+    <ReportPatient/>
+    </>
   )
 }
 

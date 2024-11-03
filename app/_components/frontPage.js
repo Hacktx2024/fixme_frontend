@@ -139,12 +139,15 @@ export default function LoginPage() {
                 Forgot Password?
               </Link>
             </div>
+            <Link href={'/ask'}>
             <button
               type="submit"
+              disabled={!(username && password)}
               className="w-full py-2 bg-green-700 text-white rounded-md hover:bg-green-800 focus:outline-none"
-            >
+              >
               Login
             </button>
+              </Link>
           </form>
           <div className="text-center mt-6 text-gray-600"> Don’t have an account?{" "} <Link href="/sign-up" className="text-green-700 hover:underline"> Sign up now </Link> </div>
         </div>

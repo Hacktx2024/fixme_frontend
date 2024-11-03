@@ -78,52 +78,10 @@ export default function PatientReport() {
           </p>
         </div>
 
-        <div className="mb-6">
-          <h2 className="text-xs mb-2">Medication</h2>
-          {medications.map((medication, index) => (
-            <div key={index} className="flex items-center space-x-4 mb-4">
-              <input
-                type="text"
-                value={medication.name}
-                onChange={(e) => handleMedicationChange(index, "name", e.target.value)}
-                placeholder="Medication"
-                className="border border-gray-300 p-2 rounded-md w-1/3"
-              />
-              <select
-                value={medication.frequency}
-                onChange={(e) => handleMedicationChange(index, "frequency", e.target.value)}
-                className="border border-gray-300 p-2 rounded-md w-1/3"
-              >
-                <option>Once a day</option>
-                <option>Twice a day</option>
-                <option>Every 6 hours</option>
-              </select>
-              <input
-                type="text"
-                value={medication.duration}
-                onChange={(e) => handleMedicationChange(index, "duration", e.target.value)}
-                placeholder="Length of treatment"
-                className="border border-gray-300 p-2 rounded-md w-1/3"
-              />
-              <button
-                onClick={() => removeMedication(index)}
-                className="text-red-500 text-xl"
-              >
-                🗑️
-              </button>
-            </div>
-          ))}
-          <button
-            onClick={addMedication}
-            className="flex items-center space-x-2 text-green-600 font-semibold mt-2"
-          >
-            <span>➕</span> <span>Add Medication</span>
-          </button>
-        </div>
 
         <div className="flex space-x-4">
           <button className="bg-green-600 text-white px-6 py-2 rounded-md">
-            Send report
+            See Next Steps
           </button>
           <button className="bg-gray-300 px-6 py-2 rounded-md">
             Close
