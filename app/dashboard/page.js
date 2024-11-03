@@ -7,10 +7,10 @@ const page = () => {
     <>
     <Navbar/>
     
-    <main className='grid grid-cols-5 w-full h-[70vh] bg-red-300'>
+    <main className='grid grid-cols-5 w-full h-[70vh] px-12 '>
       
       <div className='col-span-2'>
-        <Image src={'/Illustration.svg'} width={500 } alt='d' height={500} className='object-contain w-full' />
+        <Image src={'/Illustration.svg'} width={400 } alt='d' height={400} className='object-contain' />
       </div>
     </main>
     </>

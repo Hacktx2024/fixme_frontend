@@ -16,9 +16,9 @@ export default function LoginPage() {
   return (
     <>
     
-{/* \nav */}b
+{/* \nav */}
 
-<div className='flex flex-row justify-between py-8 items-center ' >
+<div className='flex flex-row justify-between py-8 items-center px-12 ' >
     <Image src={'/logo.svg'} width={64} height={64} alt='logo' className=''/>   
     
     
@@ -33,8 +33,8 @@ export default function LoginPage() {
         <Image
           src="/loginPage.svg" // replace with your SVG path
           alt="Login Illustration"
-          width={700}
-          height={700}
+          width={800}
+          height={800}
           className="object-contain"
         />
       </div>
