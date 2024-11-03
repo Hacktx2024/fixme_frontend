@@ -16,7 +16,6 @@ export default function LoginPage() {
   return (
     <>
     
-{/* \nav */}b
 
 <div className='flex flex-row justify-between py-8 items-center ' >
     <Image src={'/logo.svg'} width={64} height={64} alt='logo' className=''/>   
